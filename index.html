@@ -23,6 +23,8 @@
     function onDeviceReady() {
         var element = document.getElementById('deviceProperties');
 
+alert('Dispositivo: '  + device.name + '<br />' + 'Versão Phonegap: ' + device.phonegap + '<br />' + 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versão: ' + device.version  + '<br />');
+
         element.innerHTML = 'Nombre del dispositivo: '  + device.name     + '<br />' + 
                             'Versión Phonegap: '       + device.phonegap + '<br />' + 
                             'Plataforma: '              + device.platform + '<br />' + 

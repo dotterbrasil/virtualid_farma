@@ -13,13 +13,9 @@
 
 <script>
 
-function init() {
-    document.addEventListener("deviceready", onDeviceReady, false);
-}
 
-    // device APIs are available
-    //
-    function onDeviceReady() {
+    
+    function teste() {
 
 alert("teste");
         var element = document.getElementById('deviceProperties');
@@ -31,8 +27,13 @@ alert("teste");
                             'Device Version: '  + device.version  + '<br />';
     }
 
-function identifica() {
+function init() {
+    document.addEventListener("deviceready", teste, false);
+}
 
+
+function identifica() {
+alert("identifica");
 
 alert('Dispositivo: '  + device.name + '<br />' + 'Versão Phonegap: ' + device.cordova + '<br />' + 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versão: ' + device.version  + '<br />');
 

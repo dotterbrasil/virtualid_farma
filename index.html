@@ -11,25 +11,12 @@
         <script type="text/javascript" src="childbrowser.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
 
-<script type="text/javascript" charset="utf-8" src="phonegap.1.0.0.js"></script>
-    <script type="text/javascript" charset="utf-8">
 
-    // Espera a que PhoneGap se inicie
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
+function identifica() {
 
-    // PhoneGap esta listo
-    //
-    function onDeviceReady() {
-        var element = document.getElementById('deviceProperties');
 
 alert('Dispositivo: '  + device.name + '<br />' + 'Versão Phonegap: ' + device.phonegap + '<br />' + 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versão: ' + device.version  + '<br />');
 
-        element.innerHTML = 'Nombre del dispositivo: '  + device.name     + '<br />' + 
-                            'Versión Phonegap: '       + device.phonegap + '<br />' + 
-                            'Plataforma: '              + device.platform + '<br />' + 
-                            'UUID: '                + device.uuid     + '<br />' + 
-                            'Versión: '            + device.version  + '<br />';
     }
 
     </script>
@@ -44,6 +31,7 @@ alert('Dispositivo: '  + device.name + '<br />' + 'Versão Phonegap: ' + device.p
 <br>
 <form>
 <input type="button" value="teste" onclick="startScan()">
+<input type="button" value="DISPOSITIVO" onclick="identifica()">
 </form>
 
 <font color="#000000">

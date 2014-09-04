@@ -1,0 +1,19 @@
+<html>
+<head>
+<script>
+function dados() {
+
+formulario = document.getElementById("receita");
+
+alert(parent.receita.forms.length);
+
+}
+</script>
+
+</head>
+
+<body>
+<iframe id="receita" name="receita" src="http://www.receita.fazenda.gov.br/PessoaJuridica/CNPJ/cnpjreva/Cnpjreva_Solicitacao2.asp"></iframe>
+<input type="button" value="captura dados" onclick="dados()">
+</body>
+</html>

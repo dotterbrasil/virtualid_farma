@@ -51,13 +51,19 @@ V-ID: <font size="2">
 <INPUT TYPE="text" NAME="flote" MAXLENGTH="20" SIZE="20" readonly="readonly">
 </div>
 
+<div style="position:absolute;left:450px; top:40px "><font size="3">Natureza da Operacao: <br>
+<INPUT TYPE="radio" NAME="fnatureza" VALUE="venda"> Venda<BR>
+<INPUT TYPE="radio" NAME="fnatureza" VALUE="amostra"> Amostra<BR>
+<INPUT TYPE="radio" NAME="fnatureza" VALUE="armazenagem"> Armazenagem<BR>
+<input type="text" name="ftransportadora">
+</div>
 
 <div style="position:absolute;left:50px; top:330px ">
 
 <INPUT TYPE="button" VALUE="Limpa" onClick="reset()">
 <input type="button" value="Captura" onclick="startScan()">
 <input type="button" value="DISPOSITIVO" onclick="identifica()">
-
+<input type="button" value="le_nota"  onClick="le_nota()">
 
 <BR>_____________________________________________________________________________________<BR>
 
@@ -76,8 +82,8 @@ Foram encontrados <input type="text" name="registros" size="5"> registos com <IN
 
 </div>
 
-<div style="position:absolute;left:600px; top:10px ">Registro existente:<br>
-<iframe name="VID" src="dicas.html" width="500" height="300"></frame>
+<div style="position:absolute;left:650px; top:10px ">Registro existente:<br>
+<iframe name="VID" id="VID" src="\\server01\sistemas$\Fatwin\00001\Producao\Transmissao\NFGerada\35120700762956000120550010000017691826176424-nfe.xml" width="500" height="300"></frame>
 </div>
 
 </body>

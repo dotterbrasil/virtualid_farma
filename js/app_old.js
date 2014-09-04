@@ -30,24 +30,20 @@ for (i=0;i<4;i++) {
 		break;
 	case "21":
 		serial = n.substring(2,fim_de_campo);
-		document.formulario.fserial.value = serial;
 		n = n.substring(fim_de_campo,n.length);
 		break;
 	case "17":
 		validade = n.substring(2,8);
-		validade = n.substring(6,8)+"/"+n.substring(4,6)+"/"+n.substring(2,4);
-		document.formulario.fvalidade.value = n.substring(4,6)+"/"+n.substring(2,4);
+		validade = n.substring(6,8)+"/"+n.substring(4,6)+"/"+n.substring(2,4)
 		n = n.substring(8,n.length);
 		break;
 	case "10":
 		lote = n.substring(2,fim_de_campo);
-		document.formulario.flote.value = lote;
 		n = n.substring(fim_de_campo,n.length);
 		break;
 	case "713":
 		reg_anvisa = n.substring(3,fim_de_campo);
 		n = n.substring(fim_de_campo,n.length);
-		document.formulario.fanvisa.value = reg_anvisa;
 		break;
 
 
@@ -75,9 +71,9 @@ function startScan() {
 	scanner.scan(
 		function (result) {
 			var s = "Result: " + result.text + "\n" +
-			"Format: " + result.format + "\n" +"Cancelled: " + result.cancelled;
+			"Format: " + result.format + "\n" /*+"Cancelled: " + result.cancelled*/;
 	alert("hey: "+s);
-			
+			/*resultDiv.innerHTML = s;*/
 			aux = result.text;
 			alert("separando...");
 			separa(aux);

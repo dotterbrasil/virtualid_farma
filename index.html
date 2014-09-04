@@ -11,54 +11,74 @@
         <script type="text/javascript" src="childbrowser.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
 
-<script>
+
+</head>
+
+<body onLoad="init()">
+
+<style type="text/css"> 
+body { 
+background-image: url("imagens/fundop.jpg"); 
+background-repeat: no-repeat; 
+background-position: 5px 10px;  
+} 
+</style> 
+
+<form name="formulario" action="js/registro.php" method="POST">
+
+<font size="1">
+
+V-ID: <font size="2">
+<INPUT TYPE="text" NAME="fid" MAXLENGTH="15" SIZE="15" onChange="atualizaJanela()">
+
+<div style="position:absolute;left:20px; top:50px ">v-id:<br>
+<IFRAME NAME="CampoFoto" SRC="imagens/foto.jpg" ALIGN="left" HEIGHT="200" WIDTH="160" SCROLLING="NO" FRAMEBORDER="0"> </IFRAME>
+</div>
+
+<div style="position:absolute;left:220px; top:40px "><font size="1">Reg. ANVISA: <br>
+<INPUT TYPE="text" NAME="fanvisa" MAXLENGTH="13" SIZE="20">
+</div>
+
+<div style="position:absolute;left:220px; top:100px "><font size="1">Serial: <br>
+<INPUT TYPE="text" NAME="fserial" MAXLENGTH="20" SIZE="20">
+</div>
+
+<div style="position:absolute;left:220px; top:160px "><font size="1">Validade: <br>
+<INPUT TYPE="text" NAME="fvalidade" MAXLENGTH="5" SIZE="20" readonly="readonly">
+</div>
+
+<div style="position:absolute;left:220px; top:220px "><font size="1">Lote: <br>
+<INPUT TYPE="text" NAME="flote" MAXLENGTH="20" SIZE="20" readonly="readonly">
+</div>
 
 
-    
-    function teste() {
+<div style="position:absolute;left:50px; top:330px ">
 
-alert("teste");
-        var element = document.getElementById('deviceProperties');
-        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Model: '    + device.model    + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
-    }
-
-function init() {
-    document.addEventListener("deviceready", teste, false);
-}
-
-
-function identifica() {
-alert("identifica");alert(name);alert("não deu");
-
-alert('Dispositivo: '  + device.name + '<br />' + 'Versão Phonegap: ' + device.cordova + '<br />' + 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versão: ' + device.version  + '<br />');
-
-    }
-
-</script>
-
-    </head>
-
-    <body onLoad="init()">
-
-    <p>
-    <button id="startScan">Start Scan</button>
-    </p>
-<br>
-<form>
-<input type="button" value="teste" onclick="startScan()">
+<INPUT TYPE="button" VALUE="Limpa" onClick="reset()">
+<input type="button" value="Captura" onclick="startScan()">
 <input type="button" value="DISPOSITIVO" onclick="identifica()">
+
+
+<BR>_____________________________________________________________________________________<BR>
+
+
+<INPUT TYPE="hidden" NAME="conteudo" id="conteudo">
+<BR>
+<INPUT TYPE="checkbox" NAME="Roubado" onClick="editaEvento()"> Carga Roubada <INPUT TYPE="checkbox" NAME="Invalido" onClick="editaEvento()"> Selo Invalido - <INPUT TYPE="text" NAME="fevento" MAXLENGTH="10" SIZE="10"> 
+<BR><BR>Registro para Processamento em Lote:<BR>
+<TEXTAREA NAME="texto" id="texto" form="formulario" rows=10 cols=70></TEXTAREA>
+<input type="hidden" name="dados" id="dados">
+<input type="button" value="REGISTRA" onClick="validaArquivo()"><BR>
+
+Foram encontrados <input type="text" name="registros" size="5"> registos com <INPUT TYPE="text" NAME="campos" readonly size="2"> campos.
+
 </form>
 
-<font color="#000000">
-    <div id="results">Aqui esperamos o resultado bruto</div>
-	<div id="resultado">E, aqui, o resultado decodificado.</div>
+</div>
 
-<p id="deviceProperties">Cargando...</p>
-</font>        
-    </body>
+<div style="position:absolute;left:600px; top:10px ">Registro existente:<br>
+<iframe name="VID" src="teste.htm" width="500" height="300"></frame>
+</div>
+
+</body>
 </html>

@@ -75,9 +75,8 @@ function startScan() {
 
 	scanner.scan(
 		function (result) {
-			var s = "Result: " + result.text + "\n" +
-			"Format: " + result.format + "\n" +"Cancelled: " + result.cancelled;
-	alert("hey: "+s);
+			/*var s = "Result: " + result.text + "\n" + "Format: " + result.format + "\n" +"Cancelled: " + result.cancelled;
+			alert("hey: "+s);*/
 			
 			aux = result.text;
 			alert("separando...");

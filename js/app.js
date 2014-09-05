@@ -76,10 +76,10 @@ function startScan() {
 	scanner.scan(
 		function (result) {
 			/*var s = "Result: " + result.text + "\n" + "Format: " + result.format + "\n" +"Cancelled: " + result.cancelled;
-			alert("hey: "+s);*/
+			alert("hey: "+s);
+			alert("separando...");*/
 			
 			aux = result.text;
-			alert("separando...");
 			separa(aux);
 		}, 
 		function (error) {

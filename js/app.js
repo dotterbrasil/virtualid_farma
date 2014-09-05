@@ -1,4 +1,5 @@
 var resultDiv;
+document.addEventListener("deviceready", identifica, false);
 
 
 function separa(n) {
@@ -64,7 +65,7 @@ for (i=0;i<4;i++) {
 
 
 function init() {
-	document.addEventListener("deviceready", init, false);
+	
 	resultDiv = document.getElementByid('results');
 }
 
@@ -88,6 +89,6 @@ function startScan() {
 
 function identifica() {
 
-document.formulario.fid.value = 'Dispositivo: '  + device.name + '<br />' + 'Versao Phonegap: ' + device.cordova + '<br />' + 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versao: ' + device.version;
+document.formulario.fid.value = 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versao: ' + device.version;
 
     }

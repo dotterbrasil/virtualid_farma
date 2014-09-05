@@ -26,7 +26,8 @@ cnpj = str;
     var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
     digitos_iguais = 1;
     if (cnpj.length < 14 && cnpj.length < 15)
-	{navigator.notification.alert('CNPJ Invalido!', alertDismissed, 'ATENCAO', 'OK');
+	{	texto_alerta = "CNPJ INVALIDO!";
+		alert(texto_alerta);
 		document.formulario.ftransportadora.value = 'CNPJ invalido';
         	return false;
 	}

@@ -88,6 +88,6 @@ function startScan() {
 
 function identifica() {
 
-document.formulario.fvid.value = 'Dispositivo: '  + device.name + '<br />' + 'Versao Phonegap: ' + device.cordova + '<br />' + 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versao: ' + device.version;
+document.formulario.fid.value = 'Dispositivo: '  + device.name + '<br />' + 'Versao Phonegap: ' + device.cordova + '<br />' + 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versao: ' + device.version;
 
     }

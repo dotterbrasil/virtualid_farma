@@ -23,7 +23,10 @@ cnpj = str;
     var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
     digitos_iguais = 1;
     if (cnpj.length < 14 && cnpj.length < 15)
-        return false;
+	{
+		document.formulario.ftransportadora.value = 'CNPJ invalido';
+        	return false;
+	}
     for (i = 0; i < cnpj.length - 1; i++)
         if (cnpj.charAt(i) != cnpj.charAt(i + 1))
     {

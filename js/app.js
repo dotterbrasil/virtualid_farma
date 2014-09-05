@@ -64,11 +64,6 @@ for (i=0;i<4;i++) {
 
 
 
-function init() {
-	
-	resultDiv = document.getElementByid('results');
-}
-
 function startScan() {
 
 	var scanner = cordova.require("cordova/plugin/BarcodeScanner");
@@ -78,7 +73,14 @@ function startScan() {
 		function (result) {
 						
 			aux = result.text;
-			separa(aux);
+			if(result.format == 'DATA_MATRIX')
+				{
+				separa(aux);
+				}
+				else
+					{
+					le_nota(aux);
+					}
 		}, 
 		function (error) {
 			alert("Scanning failed: " + error);
@@ -89,6 +91,6 @@ function startScan() {
 
 function identifica() {
 
-document.formulario.fid.value = 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versao: ' + device.version;
+document.formulario.fid.value = 'Plataforma: '+ device.platform + ' - ' + 'UUID: '+ device.uuid;
 
     }

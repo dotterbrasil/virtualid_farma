@@ -1,9 +1,8 @@
 var valida = false;
 
-function validachave() {
+function le_nota(chave){
 
-cnpj = document.formulario.origem.value;
-chave = document.formulario.chave.value;
+cnpj = "00762956000120";
 
 tamanho = chave.length;
 
@@ -12,18 +11,22 @@ compara = cnpj.localeCompare(cnpj_chave);
 
 if (tamanho==44) {
 	if (compara==0) 
-		{valida = 1;}
+		{
+		valida = 1;
+		document.formulario.fnfe.value = chave.substr(28,34);
+		}
 		else {valida = false;alert("Emissor NFe diferente do Fabricante");}
 	}
 	else {valida = false;alert("Chave de Acesso Inválida");}
 }
+
 
 function validacnpj(str) {
 cnpj = str;
     var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
     digitos_iguais = 1;
     if (cnpj.length < 14 && cnpj.length < 15)
-	{navigator.notification.alert('CNPJ Invalido!', null, 'ATENCAO', 'OK');
+	{navigator.notification.alert('CNPJ Invalido!', alertDismissed, 'ATENCAO', 'OK');
 		document.formulario.ftransportadora.value = 'CNPJ invalido';
         	return false;
 	}

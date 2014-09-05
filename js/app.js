@@ -62,8 +62,9 @@ alert("GTIN: "+GTIN+"\n"+"Reg. ANVISA: "+reg_anvisa+"\n"+"Serial: "+serial+"\n"+
 }
 
 
-document.addEventListener("deviceready", init, false);
+
 function init() {
+	document.addEventListener("deviceready", init, false);
 	resultDiv = document.getElementByid('results');
 }
 

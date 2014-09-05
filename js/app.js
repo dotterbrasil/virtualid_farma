@@ -56,7 +56,7 @@ for (i=0;i<4;i++) {
 		break;
 		}
 }
-alert("GTIN: "+GTIN+"\n"+"Reg. ANVISA: "+reg_anvisa+"\n"+"Serial: "+serial+"\n"+"Lote: "+lote+"\n"+"Validade: "+validade);
+
 
 
 }
@@ -92,6 +92,6 @@ function startScan() {
 function identifica() {
 
 
-alert('Dispositivo: '  + device.name + '<br />' + 'Versão Phonegap: ' + device.cordova + '<br />' + 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versão: ' + device.version  + '<br />');
+navigator.notification.alert('Dispositivo: '  + device.name + '<br />' + 'Versão Phonegap: ' + device.cordova + '<br />' + 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versão: ' + device.version  + '<br />');
 
     }

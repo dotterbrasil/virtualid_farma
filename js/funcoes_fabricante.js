@@ -46,7 +46,7 @@ cnpj = str;
         resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
         if (resultado != digitos.charAt(0))
 		{
-		navigator.notification.alert('CNPJ invalido');
+		document.formulario.ftransportadora.value = 'CNPJ invalido';
 	        return false;
 		}
         tamanho = tamanho + 1;
@@ -62,14 +62,14 @@ cnpj = str;
         resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
         if (resultado != digitos.charAt(1))
 		{
-		navigator.notification.alert('CNPJ invalido');
+		document.formulario.ftransportadora.value = 'CNPJ invalido';
             	return false;
 		}
         return true;
     }
     else
 	{
-	navigator.notification.alert('CNPJ invalido');
+	document.formulario.ftransportadora.value = 'CNPJ invalido';
         return false;
 	}
 }

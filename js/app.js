@@ -75,10 +75,7 @@ function startScan() {
 
 	scanner.scan(
 		function (result) {
-			/*var s = "Result: " + result.text + "\n" + "Format: " + result.format + "\n" +"Cancelled: " + result.cancelled;
-			alert("hey: "+s);
-			alert("separando...");*/
-			
+						
 			aux = result.text;
 			separa(aux);
 		}, 
@@ -91,7 +88,6 @@ function startScan() {
 
 function identifica() {
 
-
-navigator.notification.alert('Dispositivo: '  + device.name + '<br />' + 'Versão Phonegap: ' + device.cordova + '<br />' + 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versão: ' + device.version  + '<br />');
+document.formulario.fvid.value = 'Dispositivo: '  + device.name + '<br />' + 'Versao Phonegap: ' + device.cordova + '<br />' + 'Plataforma: '+ device.platform + '<br />' + 'UUID: '+ device.uuid+ '<br />' +'Versao: ' + device.version;
 
     }

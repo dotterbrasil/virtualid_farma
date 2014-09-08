@@ -16,8 +16,8 @@
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
     <gap:plugin name="org.apache.cordova.device" />
 
-    <preference name="phonegap-version" value="3.3.0" />
-    <preference name="orientation"      value="default" />
+    <preference name="phonegap-version" value="3.5.0" />
+    <preference name="orientation"      value="landscape" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
     <preference name="webviewbounce"    value="false" />

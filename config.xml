@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.dotter.beta"
-        version   = "2.0.0">
+        id        = "com.dotter.virtualid_farma"
+        version   = "1.0.0">
     <name>Virtual ID - Farma</name>
 
     <description>
-        Scans barcodes.
+        VIrtual ID Farma - modulo de embarque.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="http://www.dotter.com.br" email="eduardo@dotter.com.br">
+        Dotter do Brasil Ltda
     </author>
 
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>

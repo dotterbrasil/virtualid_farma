@@ -57,5 +57,5 @@ for ($x=0; $x<$contador; $x++)
 		}
   } 
 
-echo "<html><script>document.location.href = 'http://v-id.net/demo/app_demo.htm';</script></html>";
+
 ?>

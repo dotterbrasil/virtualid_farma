@@ -11,11 +11,18 @@ $conteudo = stripslashes($_POST["conteudo"]);
 $campos = $_POST["campos"];
 $dados = explode(";",$_POST["dados"]);
 $registros = $_POST["registros"];
-$evento = $_POST["fevento"];
-$distribuidor = $_POST["fdistribuidor"];
-$zona = $_POST["fzona"];
-$embarque = $_POST["fembarque"];$embarque = str_replace("/","",$embarque);
 $contador = $registros*$campos;
+
+$anvisa = $_POST["fanvisa"];
+$serial = $_POST["fserial"];
+$lote = $_POST["flote"];
+$validade = $_POST["fvalidade"];$validade = str_replace("/","",$validade);
+$destino = $_POST["fdestino"];
+$transportadora = $_POST["ftransportadora"];
+$nfe = $_POST["fnfe"];
+$natureza = $_POST["fnatureza"];
+$id = $_POST["fid"];
+
 
 for ($x=0; $x<$contador; $x++)
   {
@@ -24,25 +31,15 @@ for ($x=0; $x<$contador; $x++)
 		$alfa = $x%$campos;
 		if ($alfa==0)
 			{
-			$id = $dados[$x].$dados[$x+1];
-			$conteudo2 = str_replace("id=".$auxiliar,"id=".$auxiliar.$id,$conteudo);
+			$serial = $dados[$x];
+			$conteudo2 =  date("h:i:sa")." - Natureza: ".$natureza." - NFe: ".$nfe." - Origem: ".$origem." - Destino: ".$destino." - Transportadora: ".$transportadora;
 
-			$conteudo2 = str_replace("evento=".$auxiliar,"evento=".$auxiliar.$evento,$conteudo2);
-			$conteudo2 = str_replace("distribuidor=".$auxiliar,"distribuidor=".$auxiliar.$distribuidor,$conteudo2);
-			$conteudo2 = str_replace("zona=".$auxiliar,"zona=".$auxiliar.$zona,$conteudo2);
-			$conteudo2 = str_replace("embarque=".$auxiliar,"embarque=".$auxiliar.$embarque,$conteudo2);
-
-			$inicio = strpos($conteudo2,"id=")+4;
-			$fim = strpos($conteudo2,"distribuidor")-$inicio-2;
-
-			$endereco = substr($conteudo2,$inicio,$fim);
-			$serial = substr($endereco,0,8);
-			$lote = substr($serial,0,2);
+			$endereco = $anvisa."/".$lote."/".$serial;
 
 
-			$FILE = "../vid/".$endereco.".php";echo "<script>alert('ok');</script>";
+			$FILE = "http://v-id.net/demo/farma/".$endereco.".vid";
 				if(file_exists($FILE)) {
-					$fp = fopen($FILE, "r+");
+					$fp = fopen($FILE, "a+");
 					if(!fwrite($fp, $conteudo2)) {
 						$FILE2 = "../vid/log_de_erros.txt";
 						$fp2 = fopen($FILE2, "r+");

@@ -32,6 +32,7 @@ for (i=0;i<4;i++) {
 	case "21":
 		serial = n.substring(2,fim_de_campo);
 		document.formulario.fserial.value = serial;
+		document.getElementById("texto").value = document.getElementById("texto").value+serial+";"
 		n = n.substring(fim_de_campo,n.length);
 		break;
 	case "17":
@@ -53,7 +54,9 @@ for (i=0;i<4;i++) {
 
 
 	default:
-		alert("Este não é um código válido!");i=10;
+		texto_alerta = "Este não é um código válido!";
+		alert(texto_alerta);
+		i=10;
 		break;
 		}
 }

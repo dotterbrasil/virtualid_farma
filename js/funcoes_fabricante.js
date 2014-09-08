@@ -15,20 +15,29 @@ if (tamanho==44) {
 		valida = 1;
 		document.formulario.fnfe.value = chave.substr(28,34);
 		}
-		else {valida = false;alert("Emissor NFe diferente do Fabricante");}
+		else {
+			valida = false;
+			texto_alerta = "Emissor NFe não Autorizado!";
+			alert(texto_alerta);
+		}
 	}
-	else {valida = false;alert("Chave de Acesso Inválida");}
+	else {
+		valida = false;
+		texto_alerta = "Chave de Acesso Invalida";
+		alert(texto_alerta);
+	}
 }
 
 
 function validacnpj(str) {
-cnpj = str;
-    var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
+
+	cnpj = str;
+	texto_alerta = "CNPJ INVALIDO!";
+    	var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
     digitos_iguais = 1;
     if (cnpj.length < 14 && cnpj.length < 15)
-	{	texto_alerta = "CNPJ INVALIDO!";
+	{	
 		alert(texto_alerta);
-		document.formulario.ftransportadora.value = 'CNPJ invalido';
         	return false;
 	}
     for (i = 0; i < cnpj.length - 1; i++)
@@ -53,7 +62,7 @@ cnpj = str;
         resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
         if (resultado != digitos.charAt(0))
 		{
-		document.formulario.ftransportadora.value = 'CNPJ invalido';
+		alert(texto_alerta);
 	        return false;
 		}
         tamanho = tamanho + 1;
@@ -69,14 +78,14 @@ cnpj = str;
         resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
         if (resultado != digitos.charAt(1))
 		{
-		document.formulario.ftransportadora.value = 'CNPJ invalido';
+		alert(texto_alerta);
             	return false;
 		}
         return true;
     }
     else
 	{
-	document.formulario.ftransportadora.value = 'CNPJ invalido';
+	alert(texto_alerta);
         return false;
 	}
 }
@@ -91,6 +100,63 @@ entrada = document.formulario.fdestino.value;
 valida = validacnpj(entrada);
 }
 
+
+function processaDados() {
+
+	Lote = document.getElementById("texto").value;
+
+	for (i=0;i<Lote.lastIndexOf(String.fromCharCode(10));i++) {
+		Lote = Lote.replace(String.fromCharCode(10),"");
+		Lote = Lote.replace(String.fromCharCode(13),"");
+		}
+
+	for (i=0;i<Lote.lastIndexOf(" ");i++) {
+		Lote = Lote.replace(" ","");
+		}
+
+	document.getElementById("texto").value = Lote;
+	document.getElementById("dados").value = Lote;
+	
+	contador = 0;
+}
+
+function validaArquivo(){
+
+	var tamanho = 0;
+	var final = 0;
+
+	processaDados();
+
+	tamanho = Lote.length;
+	final = Lote.lastIndexOf(";");
+		
+	for (i=0;i<final;i++) {
+		if(Lote.indexOf(";",i)>0) {
+			contador++;
+			i = Lote.indexOf(";",i);
+		} else {valido = -1;}
+	}
+
+	if(contador%num_campos!=0) {valido = -1;}
+
+	if(valido>0)
+		{
+		texto_alerta = "Arquivo Correto com "+contador/num_campos+" registros";
+		alert(texto_alerta);
+		document.formulario.registros.value = contador/num_campos;
+		document.formulario.campos.value = num_campos;
+		envio();
+		} else {
+			texto_alerta = "Arquivo com Erro";
+			alert(texto_alerta);
+			}
+
+	document.formulario.registros.value = contador/num_campos;
+	document.formulario.campos.value = num_campos;
+}
+
+
 function envio(){
-if (valida) {document.formulario.submit();} else {alert("Dados Inválidos !");}
+texto_alerta = "Dados Invalidos!";
+if (valida) {document.formulario.submit();} else {alert(texto_alerta);}
 }

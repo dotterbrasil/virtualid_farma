@@ -49,14 +49,16 @@ for ($x=0; $x<$contador; $x++)
 						fclose($fp2);
 						}
 					fclose($fp);
-					echo "<html><script>alert('Registrou arquivo: '".$FILE."'\n');</script></html>";
+					echo "<html><script>texto_alerta = 'registrou arquivo'; alert(texto_alerta);</script></html>";
 					}
 					else {
-						echo "<html><script>alert('Registro Inexistente!');</script></html>";
+						echo "<html><script>texto_alerta = 'registro inexistente!';alert(texto_alerta);</script></html>";
 						}
 
 			}
 		}
   } 
+
+echo "<script>window.location.assign('index.html')</script>";
 
 ?>

@@ -1,0 +1,50 @@
+<html>
+<body>
+<input type="file" id="fileinput" defaultValue="file:\\\\server01\\sistemas$\\Fatwin\\00001\\Producao\\Transmissao\\NFGerada\\35120700762956000120550010000017691826176424-nfe.xml"/>
+<script type="text/javascript">
+  function readSingleFile(evt) {
+    //Retrieve the first (and only!) File from the FileList object
+    var f = evt.target.files[0]; alert(evt.target.files);
+
+    if (f) {
+      var r = new FileReader();
+      r.onload = function(e) { 
+	      var contents = e.target.result;
+        alert( "Got the file.n" 
+              +"name: " + f.name + "n"
+              +"type: " + f.type + "n"
+              +"size: " + f.size + " bytesn"
+              + "starts with: " + contents.substr(1, contents.indexOf("n"))
+        );  alert(contents);
+      }
+      a = r.readAsText(f);alert(a);
+    } else { 
+      alert("Failed to load file");
+    }
+
+  }
+
+ document.getElementById('fileinput').addEventListener('change', readSingleFile, false);
+
+function haha(){
+var g=document.getElementById('fileinput');
+g.files.value = "file:\\\\server01\\sistemas$\\Fatwin\\00001\\Producao\\Transmissao\\NFGerada\\35120700762956000120550010000017691826176424-nfe.xml";
+f = g.files[0];
+var r = new FileReader();
+r.onload = function(e) { 
+	      var contents = e.target.result;
+        alert( "Got the file.n" 
+              +"name: " + f.name + "n"
+              +"type: " + f.type + "n"
+              +"size: " + f.size + " bytesn"
+              + "starts with: " + contents.substr(1, contents.indexOf("n"))
+        );  alert(contents);
+      }
+      a = r.readAsText(f);alert(a);
+alert(f);
+alert("aha");
+}
+</script>
+<input type="button" value="aha" onClick="haha()">
+</body>
+</html>

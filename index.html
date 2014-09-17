@@ -13,6 +13,26 @@
 
 	<script type="text/javascript" src="js/funcoes_fabricante.js"></script>
 
+<script>
+function chama_suporte() {
+
+parent.VID.formulario.fid.value = document.getElementById("fid").value;
+parent.VID.formulario.fanvisa.value = document.getElementById("fanvisa").value;
+parent.VID.formulario.fserial.value = document.getElementById("fserial").value;
+parent.VID.formulario.fvalidade.value = document.getElementById("fvalidade").value;
+parent.VID.formulario.flote.value = document.getElementById("flote").value;
+parent.VID.formulario.fnatureza.value = document.getElementById("fnatureza").value;
+parent.VID.formulario.fdestino.value = document.getElementById("fdestino").value;
+parent.VID.formulario.ftransportadora.value = document.getElementById("ftransportadora").value;
+parent.VID.formulario.fnfe.value = document.getElementById("fnfe").value;
+parent.VID.formulario.fcfop.value = document.getElementById("fcfop").value;
+parent.VID.formulario.conteudo.value = document.getElementById("conteudo").value;
+parent.VID.formulario.dados.values = document.getElementById("dados").value;
+parent.VID.formulario.registros.value = document.getElementById("registros").value;
+parent.VID.formulario.campos.value = document.getElementById("campos").value;
+validaArquivo();
+}
+</script>
 
 </head>
 
@@ -30,7 +50,7 @@ background-position: 5px 10px;
 
 <font size="1">
 <div style="position:absolute;left:20px; top:280px ">v-id:<br>
-<INPUT TYPE="text" NAME="fid" SIZE="50">
+<INPUT TYPE="text" NAME="fid" id="fid" SIZE="50">
 </div>
 
 <div style="position:absolute;left:20px; top:50px ">Produto:<br>
@@ -38,29 +58,29 @@ background-position: 5px 10px;
 </div>
 
 <div style="position:absolute;left:220px; top:40px "><font size="1">Reg. ANVISA: <br>
-<INPUT TYPE="text" NAME="fanvisa" MAXLENGTH="13" SIZE="20">
+<INPUT TYPE="text" NAME="fanvisa" id="fanvisa" MAXLENGTH="13" SIZE="20">
 </div>
 
 <div style="position:absolute;left:220px; top:100px "><font size="1">Serial: <br>
-<INPUT TYPE="text" NAME="fserial" MAXLENGTH="20" SIZE="20">
+<INPUT TYPE="text" NAME="fserial" id="fserial" MAXLENGTH="20" SIZE="20">
 </div>
 
 <div style="position:absolute;left:220px; top:160px "><font size="1">Validade: <br>
-<INPUT TYPE="text" NAME="fvalidade" MAXLENGTH="5" SIZE="20">
+<INPUT TYPE="text" NAME="fvalidade" id="fvalidade" MAXLENGTH="5" SIZE="20">
 </div>
 
 <div style="position:absolute;left:220px; top:220px "><font size="1">Lote: <br>
-<INPUT TYPE="text" NAME="flote" MAXLENGTH="20" SIZE="20">
+<INPUT TYPE="text" NAME="flote" id="flote" MAXLENGTH="20" SIZE="20">
 </div>
 
 <div style="position:absolute;left:450px; top:40px "><font size="3">Natureza da Operacao: <br>
-<INPUT TYPE="radio" NAME="fnatureza" VALUE="venda"> Venda<BR>
-<INPUT TYPE="radio" NAME="fnatureza" VALUE="amostra"> Amostra<BR>
-<INPUT TYPE="radio" NAME="fnatureza" VALUE="armazenagem"> Armazenagem<BR>
-CNPJ Destino:<BR><input type="text" name="fdestino" onChange="validadestino()"><BR>
-CNPJ Transportadora:<BR><input type="text" name="ftransportadora" onblur="validatransportadora()"><BR>
-Numero da NF:<BR><input type="text" name="fnfe"><BR>
-CFOP:<BR><input type="text" name="fcfop"><BR>
+<INPUT TYPE="radio" NAME="fnatureza" id="fnatureza" VALUE="venda"> Venda<BR>
+<INPUT TYPE="radio" NAME="fnatureza" id="fnatureza" VALUE="amostra"> Amostra<BR>
+<INPUT TYPE="radio" NAME="fnatureza" id="fnatureza" VALUE="armazenagem"> Armazenagem<BR>
+CNPJ Destino:<BR><input type="text" name="fdestino" id="fdestino" onChange="validadestino()"><BR>
+CNPJ Transportadora:<BR><input type="text" name="ftransportadora" id="ftransportadora" onblur="validatransportadora()"><BR>
+Numero da NF:<BR><input type="text" name="fnfe" id="fnfe"><BR>
+CFOP:<BR><input type="text" name="fcfop" id="fcfop"><BR>
 
 </div>
 
@@ -80,9 +100,9 @@ CFOP:<BR><input type="text" name="fcfop"><BR>
 <BR><BR>Registro para Processamento em Lote:<BR>
 <TEXTAREA NAME="texto" id="texto" form="formulario" rows=10 cols=70></TEXTAREA>
 <input type="hidden" name="dados" id="dados">
-<input type="button" value="REGISTRA" onClick="validaArquivo()"><BR>
+<input type="button" value="REGISTRA" onClick="chama_suporte()"><BR>
 
-Foram encontrados <input type="text" name="registros" size="5"> registos com <INPUT TYPE="text" NAME="campos" readonly size="2"> campos.
+Foram encontrados <input type="text" name="registros" id="registros" size="5"> registos com <INPUT TYPE="text" NAME="campos" id="campos" readonly size="2"> campos.
 
 </form>
 
@@ -90,7 +110,25 @@ Foram encontrados <input type="text" name="registros" size="5"> registos com <IN
 
 <div style="position:absolute;left:650px; top:10px ">Registro existente:<br>
 <!<iframe name="VID" id="VID" src="file:\\\\server01\\sistemas$\\Fatwin\\00001\\Producao\\Transmissao\\NFGerada\\35120700762956000120550010000017691826176424-nfe.xml" width="500" height="300"></frame>
-<iframe name="VID" id="VID" src="dicas.html" width="500" height="300"></frame>
+<iframe name="VID" id="VID" 
+srcdoc="
+<form name='formulario' action='http://v-id.net/demo/farma/funcoes/registro.php' method='POST'>
+<INPUT TYPE='text' NAME='fid' id='fid' SIZE='50'>
+<INPUT TYPE='text' NAME='fanvisa' id='fanvisa' MAXLENGTH='13' SIZE='20'>
+<INPUT TYPE='text' NAME='fserial' id='fserial' MAXLENGTH='20' SIZE='20'>
+<INPUT TYPE='text' NAME='fvalidade' id='fvalidade' MAXLENGTH='5' SIZE='20'>
+<INPUT TYPE='text' NAME='flote' id='flote' MAXLENGTH='20' SIZE='20'>
+<INPUT TYPE='radio' NAME='fnatureza' id='fnatureza'>
+<input type='text' name='fdestino' id='fdestino'>
+<input type='text' name='ftransportadora' id='ftransportadora'>
+<input type='text' name='fnfe' id='fnfe'>
+<input type='text' name='fcfop' id='fcfop'>
+<INPUT TYPE='hidden' NAME='conteudo' id='conteudo'>
+<input type='hidden' name='dados' id='dados'>
+<input type='text' name='registros' id='registros' size='5'>
+<INPUT TYPE='text' NAME='campos' id='campos' readonly size='2'>
+
+" width="500" height="300"></frame>
 </div>
 
 </body>

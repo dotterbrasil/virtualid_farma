@@ -59,6 +59,6 @@ for ($x=0; $x<$contador; $x++)
 		}
   } 
 
-echo "<script>window.location.href='index.html';</script>";
+exit();
 
 ?>

@@ -131,7 +131,7 @@ function validaArquivo(){
 	processaDados();
 	Lote = document.getElementById("texto").value;
 
-	tamanho = Lote.length;alert("tamanho: "+tamanho);
+	tamanho = Lote.length;
 	final = Lote.lastIndexOf(";");
 		
 	for (i=0;i<final;i++) {
@@ -149,7 +149,7 @@ function validaArquivo(){
 		alert(texto_alerta);
 		document.formulario.registros.value = contador/num_campos;
 		document.formulario.campos.value = num_campos;
-		envio();
+		chama_suporte();
 		} else {
 			texto_alerta = "Arquivo com Erro";
 			alert(texto_alerta);
@@ -164,7 +164,6 @@ function envio(){
 texto_alerta = "Dados Invalidos!";
 if (valida) {
 		parent.VID.formulario.submit();
-		//document.formulario.submit();
-		//parent.VID.location.href = "http://v-id.net/demo/farma/"+document.formulario.fanvisa+"/"+document.formulario.flote+"/"+document.formulario.fserial+".vid";
+		
 	} else {alert(texto_alerta);}
 }

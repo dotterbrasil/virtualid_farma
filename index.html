@@ -36,11 +36,13 @@ parent.VID.formulario.ftransportadora.value = document.getElementById("ftranspor
 parent.VID.formulario.fnfe.value = document.getElementById("fnfe").value;
 parent.VID.formulario.fcfop.value = document.getElementById("fcfop").value;
 parent.VID.formulario.conteudo.value = document.getElementById("conteudo").value;
-parent.VID.formulario.dados.values = document.getElementById("dados").value;
+parent.VID.formulario.dados.value = document.getElementById("dados").value;
 parent.VID.formulario.registros.value = document.getElementById("registros").value;
 parent.VID.formulario.campos.value = document.getElementById("campos").value;
-validaArquivo();
-//parent.VID.formulario.submit();
+
+
+envio();
+
 }
 </script>
 
@@ -110,7 +112,7 @@ CFOP:<BR><input type="text" name="fcfop" id="fcfop"><BR>
 <BR><BR>Registro para Processamento em Lote:<BR>
 <TEXTAREA NAME="texto" id="texto" form="formulario" rows=10 cols=70></TEXTAREA>
 <input type="hidden" name="dados" id="dados">
-<input type="button" value="REGISTRA" onClick="chama_suporte()"><BR>
+<input type="button" value="REGISTRA" onClick="validaArquivo()"><BR>
 
 Foram encontrados <input type="text" name="registros" id="registros" size="5"> registos com <INPUT TYPE="text" NAME="campos" id="campos" readonly size="2"> campos.
 

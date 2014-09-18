@@ -25,18 +25,23 @@ $id = $_POST["fid"];
 
 date_default_timezone_set("America/Sao_Paulo");
 
+
 for ($x=0; $x<$contador; $x++)
   {
+
 	if (!($x<$campos-1))
 		{
+
 		$alfa = $x%$campos;
+
 		if ($alfa==0)
 			{
+
 			$serial = $dados[$x];
+
 			$conteudo2 =  date("d/m/Y - h:i:sa")." - Natureza: ".$natureza." - NFe: ".$nfe." - Origem: ".$origem." - Destino: ".$destino." - Transportadora: ".$transportadora.chr(10).chr(13);
 
 			$endereco = $anvisa."/".$lote."/".$serial;
-
 
 			$FILE = "../".$endereco.".vid";
 
@@ -52,14 +57,12 @@ for ($x=0; $x<$contador; $x++)
 					echo "<html><script>texto_alerta = 'registrou arquivo'; alert(texto_alerta);</script></html>";
 					}
 					else {
-						echo "<html><script>texto_alerta = 'registro inexistente!';alert(texto_alerta);</script></html>";
+						echo "<html><script>texto_alerta = 'registro inexistente! ';alert(texto_alerta);</script></html>";
 						}
 
 			}
 		}
   } 
-
-//echo "<script> window.close(); app.exitapp();</script>"
 
 exit("Operacao Efetuada!");
 

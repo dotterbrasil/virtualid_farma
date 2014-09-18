@@ -59,8 +59,8 @@ for ($x=0; $x<$contador; $x++)
 		}
   } 
 
-echo "<script> window.close(); app.exitapp();</script>"
+//echo "<script> window.close(); app.exitapp();</script>"
 
-exit();
+exit("Operacao Efetuada!");
 
 ?>

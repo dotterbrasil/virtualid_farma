@@ -165,6 +165,6 @@ texto_alerta = "Dados Invalidos!";
 if (valida) {
 		parent.VID.formulario.submit();
 		//document.formulario.submit();
-		parent.VID.location.href = "http://v-id.net/demo/farma/"+document.formulario.fanvisa+"/"+document.formulario.flote+"/"+document.formulario.fserial+".vid";
+		//parent.VID.location.href = "http://v-id.net/demo/farma/"+document.formulario.fanvisa+"/"+document.formulario.flote+"/"+document.formulario.fserial+".vid";
 	} else {alert(texto_alerta);}
 }
